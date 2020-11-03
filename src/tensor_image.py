@@ -188,7 +188,7 @@ def main():
         count_images(args.training, args.filetype)
         data_dir = pathlib.Path(args.training)
     
-    show_penny(data_dir, args.filetype)
+    # show_penny(data_dir, args.filetype)
     train_ds = create_ds(data_dir, 0.2, 'training', 123, 180, 180, 32)
     val_ds = create_ds(data_dir, 0.2, 'validation', 123, 180, 180, 32)
 
@@ -204,7 +204,7 @@ def main():
         test_list = get_file_list(args.testing, args.filetype)
         # load an image from the test group
         # see https://www.pluralsight.com/guides/importing-image-data-into-numpy-arrays
-        im_num = 23
+        im_num = 0
         im = PIL.Image.open(test_list[im_num]).resize((180,180))
         true_class = test_list[im_num].parts[-2]
         # convert it into a format that will work
